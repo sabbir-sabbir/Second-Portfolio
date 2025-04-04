@@ -57,7 +57,13 @@ const Hero = () => {
           </div>
 
           {/* 2 col */}
-          <div className="hidden md:block">
+          <div
+            className="hidden md:block"
+            data-aos="fade-up"
+            data-aos-delay="500"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+          >
             <Lottie
               animationData={robot}
               loop
@@ -69,7 +75,7 @@ const Hero = () => {
       <Expertise />
       <Skills />
       <Writeme />
-      <Footer/>
+      <Footer />
     </>
   );
 };
