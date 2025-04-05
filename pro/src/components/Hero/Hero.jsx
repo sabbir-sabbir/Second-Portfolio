@@ -8,6 +8,7 @@ import Expertise from "../Expertise/Expertise";
 import Skills from "../Skills/Skills";
 import Writeme from "../Writeme/Writeme";
 import Footer from "../Footer/Footer";
+import {motion} from "motion/react";
 
 const Hero = () => {
   return (
@@ -17,14 +18,37 @@ const Hero = () => {
           {/* 1 col */}
           <div className="flex flex-col justify-start items-start">
             <div className="flex justify-center items-center gap-3">
-              <h1 className="tracking-wide font-poppins text-5xl font-semibold text-white ">
+              <motion.h1
+              animate={{
+                x: [ 1000, 500, 600,  0],
+                rotate: [0, 360, 360, 360, 360, 360, 360, 360,  0],
+                scale: [1, 3.5, 1],
+
+              }}
+              transition={{
+                duration: 2,
+                ease: 'anticipate'
+              }}
+              className="tracking-wide font-poppins text-5xl font-semibold text-white ">
                 Hi, I'M{" "}
-              </h1>
+              </motion.h1>
               <span className="tracking-wide font-poppins text-5xl font-bold bg-gradient-to-r from-[#fca311]/65 via-[#9a8c98] to-[#fca311]/75 bg-clip-text text-transparent">
                 SABBIR
               </span>
             </div>
-            <div className="flex justify-center items-center gap-2 mt-5">
+            <motion.div
+            animate={{
+              y: [1000 ,  600, 400, 250, 0],
+              rotate: [0, 360, 360, 360, 360, 360, 360, 360,  0],
+              scale: [1, 3.5, 4.5, 1.5, 1],
+
+            }}
+            transition={{
+              delay: 0.5,
+              duration: 4,
+              ease: 'anticipate'
+            }}
+            className="flex justify-center items-center gap-2 mt-5">
               <h2 className="text-xl font-semibold font-poppins tracking-wider text-zinc-400">
                 A Front-end
               </h2>
@@ -34,7 +58,7 @@ const Hero = () => {
               <span>
                 <img className="w-6 h-6" src={coding} alt="logo" />
               </span>
-            </div>
+            </motion.div>
             <div className="flex  justify-center items-center w-[70%] mt-5 ">
               <p className="text-[16px] font-poppins tracking-wide mt-2 text-zinc-400">
                 I love Development & Provide Front-end web solutions. I always
@@ -42,34 +66,68 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex justify-center items-center gap-8 mt-16">
-              <button className="bg-gradient-to-tl from-[#495057] via-[#7678ed]/25 to-[#343a40] w-[180px] py-2 font-poppins text-lime-100 hover:bg-gradient-to-t from-[#495057] via-[#7678ed]/25 to-[#343a40] hover:scale-110 duration-300 transition-all hover:text-zinc-500">
+            <motion.div
+            animate={{
+              x: [1000, 0],
+            }}
+            transition={{
+              duration: 2
+            }}
+            className="flex justify-center items-center gap-8 mt-16">
+              <motion.button 
+              whileTap={{
+                scale: 0.1,
+              }}
+              className="bg-gradient-to-tl from-[#495057] via-[#7678ed]/25 to-[#343a40] w-[180px] py-2 font-poppins text-lime-100 hover:bg-gradient-to-t from-[#495057] via-[#7678ed]/25 to-[#343a40] hover:scale-110 duration-300 transition-all hover:text-zinc-500">
                 <a href={resume} download="SABBIR_(Front-end Web-Devs)">
                   Find Resume
                 </a>
-              </button>
-              <button className="bg-gradient-to-tl from-[#495057] via-[#f18701]/25 to-[#343a40]  w-[180px] py-2 font-poppins text-white hover:bg-gradient-to-b from-[#495057] via-[#f18701]/25 to-[#343a40]  hover:scale-110 duration-300 transition-all hover:text-zinc-500">
+              </motion.button>
+              <motion.button
+               whileTap={{
+                scale: 0.1,
+              }}
+              
+              className="bg-gradient-to-tl from-[#495057] via-[#f18701]/25 to-[#343a40]  w-[180px] py-2 font-poppins text-white hover:bg-gradient-to-b from-[#495057] via-[#f18701]/25 to-[#343a40]  hover:scale-110 duration-300 transition-all hover:text-zinc-500">
                 <a href={certificate} download="SABBIR_(Front-end Web-Devs)">
                   Certification
                 </a>
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
           </div>
+          
+
+
+
+
+
+
+
+
+
+
 
           {/* 2 col */}
-          <div
-            className="hidden md:block"
-            data-aos="fade-up"
-            data-aos-delay="500"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in-out"
+          <motion.div
+            animate={{
+              y: [0, 1000,  0],
+            
+
+            }}
+            transition={{
+              duration: 2,
+            }}
+            drag
+           
+            dragConstraints={{top: -100, left: -100, right: 100, bottom: 100}}
+            className="hidden md:block absolute top-[200px] right-10"
           >
             <Lottie
               animationData={robot}
               loop
               className=" w-[450px] h-[450px] object-cover  "
             />
-          </div>
+          </motion.div>
         </div>
       </section>
       <Expertise />
