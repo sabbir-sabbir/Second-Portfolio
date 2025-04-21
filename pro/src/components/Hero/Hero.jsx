@@ -13,7 +13,7 @@ import {motion} from "motion/react";
 const Hero = () => {
   return (
     <>
-      <section className="  w-full h-[96vh] bg-[url('https://images.unsplash.com/photo-1688834396398-3d0a0e69d26e?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-no-repeat px-8 py-5 ">
+      <section className=" overflow-x-hidden md:w-full  lg:h-[96vh] bg-[url('https://images.unsplash.com/photo-1688834396398-3d0a0e69d26e?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-no-repeat px-8 py-5 ">
         <div className="  grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0 mt-14  ">
           {/* 1 col */}
           <div className="flex flex-col justify-start items-start">
@@ -29,7 +29,7 @@ const Hero = () => {
                 duration: 2,
                 ease: 'anticipate'
               }}
-              className="tracking-wide font-poppins text-5xl font-semibold text-white ">
+              className="tracking-wide font-poppins text-3xl md:text-4xl lg:text-5xl font-semibold text-white ">
                 Hi, I'M{" "}
               </motion.h1>
               <span className="tracking-wide font-poppins text-5xl font-bold bg-gradient-to-r from-[#fca311]/65 via-[#9a8c98] to-[#fca311]/75 bg-clip-text text-transparent">
@@ -78,7 +78,7 @@ const Hero = () => {
               whileTap={{
                 scale: 0.1,
               }}
-              className="bg-gradient-to-tl from-[#495057] via-[#7678ed]/25 to-[#343a40] w-[180px] py-2 font-poppins text-lime-100 hover:bg-gradient-to-t from-[#495057] via-[#7678ed]/25 to-[#343a40] hover:scale-110 duration-300 transition-all hover:text-zinc-500">
+              className="bg-gradient-to-tl from-[#495057] via-[#7678ed]/25 to-[#343a40] w-[140px] sm:w-[160px] lg:w-[180px] py-2 font-poppins text-lime-100 hover:bg-gradient-to-t from-[#495057] via-[#7678ed]/25 to-[#343a40] hover:scale-110 duration-300 transition-all hover:text-zinc-500">
                 <a href={resume} download="SABBIR_(Front-end Web-Devs)">
                   Find Resume
                 </a>
@@ -88,7 +88,7 @@ const Hero = () => {
                 scale: 0.1,
               }}
               
-              className="bg-gradient-to-tl from-[#495057] via-[#f18701]/25 to-[#343a40]  w-[180px] py-2 font-poppins text-white hover:bg-gradient-to-b from-[#495057] via-[#f18701]/25 to-[#343a40]  hover:scale-110 duration-300 transition-all hover:text-zinc-500">
+              className="bg-gradient-to-tl from-[#495057] via-[#f18701]/25 to-[#343a40]  w-[140px] sm:w-[160px] lg:w-[180px] py-2 font-poppins text-white hover:bg-gradient-to-b from-[#495057] via-[#f18701]/25 to-[#343a40]  hover:scale-110 duration-300 transition-all hover:text-zinc-500">
                 <a href={certificate} download="SABBIR_(Front-end Web-Devs)">
                   Certification
                 </a>

@@ -49,17 +49,29 @@ const Footer = () => {
 
         <div className="flex justify-between items-start ">
           <div className="grid grid-cols-3  gap-6 items-center pl-0 md:pl-24">
-            {contacts.map((item, i) => (
-              <div key={i} className="flex items-center gap-3 md:gap-8">
-                <img className="w-6 h-6" src={item.icon} alt={item.name} />
-                <a
-                  className="text-lime-50 text-[10px] md:text-[16px] font-medium md:font-light"
-                  href={item.url}
-                >
-                  {item.name}
-                </a>
-              </div>
-            ))}
+          {contacts.map((contact, index) => {
+            
+  // If it's an email address, create Gmail compose link
+  const isEmail = contact.url.includes("@");
+  const link = isEmail
+    ? `https://mail.google.com/mail/?view=cm&fs=1&to=${contact.url}`
+    : contact.url.startsWith("http")
+    ? contact.url
+    : `tel:${contact.url}`; 
+
+  return (
+    <a
+      key={index}
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-2 hover:underline"
+    >
+      <img src={contact.icon} alt={contact.name} width={20} />
+      {contact.name}
+    </a>
+  );
+})}
           </div>
           <div className=" absolute top-[2050px] right-10 hidden md:block">
             <Lottie animationData={robot} loop className="w-[450px] " />

@@ -24,8 +24,8 @@ const Navbar = () => {
 
         {/* second div */}
         <div className="flex items-center gap-6">
-        <Link className="text-white font-poppins  hover:cursor-pointer" to='contact' smooth={true} offset={0} duration={500}>Contact</Link>
-        <Link className="text-white font-poppins  hover:cursor-pointer" to='write' smooth={true} offset={0} duration={500}>Write Me</Link>
+        <Link className="text-zinc-600 font-poppins shadow-lg bg-lime-50 px-2 py-1 rounded-sm  hover:cursor-pointer hover:bg-slate-300 " to='contact' smooth={true} offset={0} duration={500}>Contact</Link>
+        <Link className="text-zinc-600 font-poppins shadow-lg bg-lime-50 px-2 py-1 rounded-sm  hover:cursor-pointer hover:bg-slate-300" to='write' smooth={true} offset={0} duration={500}>Write Me</Link>
         </div>
        
    </nav>
